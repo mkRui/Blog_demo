@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
+import Button from './component/props'
 
 class App extends Component {
   render () {
     return (
       <div>
-        app
+        <Button cc={11}/>
       </div>
     )
   }

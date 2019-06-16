@@ -1,14 +1,11 @@
-import React, { Component, useState } from 'react'
-import Button from './component/props'
+import { React } from 'react'
+import  ReactHooksRedux from 'react-hooks-redux'
 
-class App extends Component {
-  render () {
-    return (
-      <div>
-        <Button cc={11}/>
-      </div>
-    )
-  }
+
+
+function App () {
+  return <div></div>
 }
+
 
 export default App

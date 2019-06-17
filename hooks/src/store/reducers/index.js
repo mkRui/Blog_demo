@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 
+const Initstate = {}
+
 const Common = (state = Initstate, action) => {
     switch (action.type) {
         case 'changeLang':

@@ -1,41 +1,32 @@
-import React, { Component } from 'react'
-import ReactHooksRedux from 'react-hooks-redux'
-import { changeLang }  from './store/actions/index'
+import React, { useCallback } from 'react'
+import { useDispatch, useMappedState } from './store/index'
 
-const { Provider, store } = ReactHooksRedux({
-  isDev: true,
-  initialState: {}
-})
-
-
-
-function Button () {
-  const state = store.useContext();
-
-  
-
-  // store.dispatch(changeLang(1))
-
-
-  return (
-    <div>1 {state.age}</div>
-  )
-}
-
+import AA from './component/aa'
 
 function App() {
-  // console.log(changeLang)
-  // console.log(store)
-  const state = store.useContext();
+  let { lang } = useMappedState(
+    useCallback(
+      (state) => ({
+          lang: state.Common.lang
+        }),
+      [],
+    )
+  )
 
-  // store.dispatch(changeLang(1))
+  let dispatch = useDispatch()
+
+  function click(text) {
+    // 点击
+    dispatch({type: 'changeLang', text})
+  }
+
+
+  console.log(lang)
   return (
-    <Provider>
-        <div>
-          <Button/>
-        </div>
-    </Provider>
-    
+      <div onClick={click.bind(this, 11)}>
+        {lang}
+        <AA/>
+      </div>
   )
 }
 

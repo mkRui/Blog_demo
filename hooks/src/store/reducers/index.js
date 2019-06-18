@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 
-const Initstate = {}
+const Initstate = {
+    lang: 'zh'
+}
 
 const Common = (state = Initstate, action) => {
     switch (action.type) {

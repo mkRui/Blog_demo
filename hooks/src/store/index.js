@@ -1,10 +1,12 @@
 import { applyMiddleware, createStore } from 'redux'
+import { create } from 'redux-react-hook'
 
 import reducers from './reducers/index'
 
-let store = createStore(
+export const store = createStore(
     reducers,
     applyMiddleware()
 )
 
-export default store
+
+export const { StoreContext, useDispatch, useMappedState } = create()

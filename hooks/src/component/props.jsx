@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
+import { useDispatch, useMappedState } from './store/index'
 
 function Button(props) {
     const [ count, setCount ]  = useState(0)
